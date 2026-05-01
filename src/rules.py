@@ -101,17 +101,3 @@ CONWAY = RuleSet(name="Conway's Game of Life", born={3}, survive={2, 3})
 HIGHLIFE = RuleSet(name="HighLife", born={3, 6}, survive={2, 3})
 
 DAY_NIGHT = RuleSet(name="Day & Night", born={3, 6, 7, 8}, survive={3, 4, 6, 7, 8})
-
-# Map of preset rules by name
-PRESETS = {
-    "conway": CONWAY,
-    "highlife": HIGHLIFE,
-    "day_night": DAY_NIGHT,
-}
-
-# Map of shortcut keys to preset rules (for keyboard shortcuts)
-SHORTCUT_TO_RULE = {
-    "1": CONWAY,
-    "2": HIGHLIFE,
-    "3": DAY_NIGHT,
-}

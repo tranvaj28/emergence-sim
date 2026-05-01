@@ -6,6 +6,20 @@
       "completedAt": null
     }
   },
-  "status": "active",
-  "specName": "Cellular Automata Simulator"
+  "status": "completed",
+  "specName": "Cellular Automata Simulator",
+  "workflow": "speckit",
+  "branch": "",
+  "transitions": [
+    {
+      "step": "tasks",
+      "substep": null,
+      "from": {
+        "step": "tasks",
+        "substep": null
+      },
+      "by": "extension",
+      "at": "2026-05-01T21:49:34.368Z"
+    }
+  ]
 }

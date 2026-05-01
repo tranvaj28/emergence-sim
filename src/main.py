@@ -86,6 +86,14 @@ class Simulation:
                     self.grid.current_rule = HIGHLIFE
                 elif event.key == pygame.K_3:
                     self.grid.current_rule = DAY_NIGHT
+                elif event.key == pygame.K_r:
+                    self.grid.clear()
+                    self.generation = 0
+                    self.stats.update(self.grid)
+                elif event.key == pygame.K_s:
+                    self.grid.randomize()
+                    self.generation = 0
+                    self.stats.update(self.grid)
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 self.handle_mouse_click(event.button, event.pos)
             elif event.type == pygame.MOUSEMOTION:
@@ -115,10 +123,8 @@ class Simulation:
 
     def draw(self):
         """Draw the grid and HUD."""
-        # Clear screen
         self.screen.fill(config.COLOR_BACKGROUND)
 
-        # Draw grid cells
         for row in range(self.grid.rows):
             for col in range(self.grid.cols):
                 color = (

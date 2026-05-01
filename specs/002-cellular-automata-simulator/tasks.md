@@ -160,13 +160,13 @@ description: "Task list for Desktop Cellular Automata Simulator implementation"
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T046 [P] Performance optimization: limit redraws to changed cells in src/main.py
-- [ ] T047 [P] Add keyboard shortcuts help to HUD in src/hud.py
-- [ ] T048 [P] Implement grid reset (R key) and random seed (S key) with history buffer clearance in src/main.py
-- [ ] T049 [P] Code cleanup and refactoring across all modules
-- [ ] T050 [P] Additional unit tests for edge cases (history buffer full, extreme speeds) in tests/unit/
-- [ ] T051 Run quickstart.md validation: ensure setup and running instructions work
-- [ ] T052 Update documentation with final feature details
+- [x] T046 [P] Performance optimization: limit redraws to changed cells in src/main.py
+- [x] T047 [P] Add keyboard shortcuts help to HUD in src/hud.py
+- [x] T048 [P] Implement grid reset (R key) and random seed (S key) with history buffer clearance in src/main.py
+- [x] T049 [P] Code cleanup and refactoring across all modules
+- [x] T050 [P] Additional unit tests for edge cases (history buffer full, extreme speeds) in tests/unit/
+- [x] T051 Run quickstart.md validation: ensure setup and running instructions work
+- [x] T052 Update documentation with final feature details
 
 ---
 

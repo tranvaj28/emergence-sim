@@ -40,6 +40,7 @@ class HUD:
     def __init__(self):
         """Initialize HUD resources."""
         self.font = pygame.font.Font(None, 24)
+        self._help_font = pygame.font.Font(None, 16)
         self._graph_surface = pygame.Surface((config.GRAPH_WIDTH, config.GRAPH_HEIGHT))
 
     def draw_graph(
@@ -131,3 +132,10 @@ class HUD:
             graph_x = config.WINDOW_WIDTH - config.GRAPH_WIDTH - config.HUD_PADDING
             graph_y = hud_top + config.HUD_PADDING
             self.draw_graph(screen, population_history, graph_x, graph_y)
+
+        help_text = "Space:Pause  →:Step  +/-:Speed  1-3:Rule  R:Reset  S:Seed"
+        help_surf = self._help_font.render(help_text, True, config.COLOR_HUD_TEXT)
+        help_y = (
+            hud_top + config.HUD_HEIGHT - help_surf.get_height() - config.HUD_PADDING
+        )
+        screen.blit(help_surf, (config.HUD_PADDING, help_y))

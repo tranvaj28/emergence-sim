@@ -2,6 +2,7 @@
 
 import numpy as np
 import pytest
+from src import config
 from src.rules import CONWAY, DAY_NIGHT, HIGHLIFE, RuleSet
 
 from src.grid import Grid, HistoryBuffer
@@ -485,3 +486,42 @@ def test_rule_switch_conway_vs_day_night():
         grid2.set_cell(r, c, True)
     grid2.apply_rule()
     assert np.sum(grid2.cells) == 0, "Tub should die under Day & Night"
+
+
+def test_all_dead_stays_dead():
+    """An empty grid remains empty under any rule."""
+    grid = Grid(rows=10, cols=10)
+    grid.apply_rule()
+    assert np.sum(grid.cells) == 0
+
+    grid.current_rule = HIGHLIFE
+    grid.apply_rule()
+    assert np.sum(grid.cells) == 0
+
+    grid.current_rule = DAY_NIGHT
+    grid.apply_rule()
+    assert np.sum(grid.cells) == 0
+
+
+def test_all_alive_dies_under_conway():
+    """A completely filled grid dies under Conway (overpopulation)."""
+    grid = Grid(rows=5, cols=5)
+    grid.cells.fill(True)
+    grid.apply_rule()
+    assert np.sum(grid.cells) == 0, "All cells should die from overpopulation"
+
+
+def test_step_back_through_full_history():
+    """Fill history to maxlen, then step back through all entries."""
+    grid = Grid(rows=4, cols=4)
+    grid.set_cell(0, 0, True)
+
+    for _ in range(config.MAX_HISTORY + 10):
+        grid.step_forward()
+
+    assert len(grid.history) == config.MAX_HISTORY
+
+    for i in range(config.MAX_HISTORY):
+        assert grid.step_back() is True
+
+    assert grid.step_back() is False, "History should be exhausted"
