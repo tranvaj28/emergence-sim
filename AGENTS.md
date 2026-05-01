@@ -32,3 +32,7 @@ Python 3.11+: Follow standard conventions
 
 <!-- MANUAL ADDITIONS START -->
 <!-- MANUAL ADDITIONS END -->
+
+## Git workflow
+After completing any task, run `./push.sh` to commit and push all changes to GitHub.
+Use descriptive commit messages when possible; fall back to the auto-commit script if unsure.
