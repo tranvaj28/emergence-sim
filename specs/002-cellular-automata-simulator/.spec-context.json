@@ -1,0 +1,11 @@
+{
+  "currentStep": "tasks",
+  "stepHistory": {
+    "tasks": {
+      "startedAt": "2026-04-14T20:25:45.555Z",
+      "completedAt": null
+    }
+  },
+  "status": "active",
+  "specName": "Cellular Automata Simulator"
+}
