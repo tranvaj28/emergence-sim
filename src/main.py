@@ -164,6 +164,9 @@ class Simulation:
             self.playing,
             self.speed,
             self.grid.current_rule.name,
+            self.stats.population_history,
+            self.stats.live_count,
+            self.stats.live_percentage,
         )
 
     def run(self):

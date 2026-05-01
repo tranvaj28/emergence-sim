@@ -148,9 +148,9 @@ description: "Task list for Desktop Cellular Automata Simulator implementation"
 
 - [x] T041 [P] [US4] Implement Statistics class with live_count and population_history in src/hud.py
 - [x] T042 [US4] Integrate Statistics with simulation loop: update each generation in src/main.py
-- [ ] T043 [US4] Implement population graph rendering using pygame.draw.lines in src/hud.py
-- [ ] T044 [US4] Add graph to HUD display (position, scaling) in src/hud.py
-- [ ] T045 [US4] Update HUD to show live count and percentage in src/hud.py
+- [x] T043 [US4] Implement population graph rendering using pygame.draw.lines in src/hud.py
+- [x] T044 [US4] Add graph to HUD display (position, scaling) in src/hud.py
+- [x] T045 [US4] Update HUD to show live count and percentage in src/hud.py
 
 **Checkpoint**: Population statistics and graph should update in real‑time
 
